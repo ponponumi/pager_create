@@ -106,4 +106,11 @@ class Web
 
         return $html;
     }
+
+    public function htmlCreateCallback(callable $urlCreate,array $setting=[])
+    {
+        // HTMLをコールバックで生成する
+        $data = $this->dataCreate($urlCreate);
+        return $this->htmlCreate($data,$setting);
+    }
 }
