@@ -19,4 +19,44 @@ class Web
     {
         $this->core->ellipsisSet($ellipsis);
     }
+
+    public function dataCreate(callable $urlCreate)
+    {
+        // ページャーのデータを作成
+        $pagerData = $this->core->pagerDataGet();
+        $result = [];
+
+        if($pagerData["list"][0] >= 2){
+            // 2以上であれば
+            $row = [
+                "url" => $urlCreate(1),
+                "id" => 1,
+            ];
+
+            $result[] = $row;
+        }
+
+        foreach($pagerData["list"] as $item){
+            $row = [
+                "url" => $urlCreate($item),
+                "id" => $item,
+            ];
+
+            $result[] = $row;
+        }
+
+        $count = count($pagerData["list"]);
+
+        if(abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 1){
+            // 差が1以上であれば
+            $row = [
+                "url" => $urlCreate($pagerData["max"]),
+                "id" => $pagerData["max"],
+            ];
+
+            $result[] = $row;
+        }
+
+        return $result;
+    }
 }
