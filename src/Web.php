@@ -36,33 +36,18 @@ class Web
 
         if($pagerData["list"][0] >= 2){
             // 2以上であれば
-            $row = [
-                "url" => $urlCreate(1),
-                "id" => 1,
-            ];
-
-            $result[] = $row;
+            $result[] = $this->rowCreate(1,$urlCreate);
         }
 
         foreach($pagerData["list"] as $item){
-            $row = [
-                "url" => $urlCreate($item),
-                "id" => $item,
-            ];
-
-            $result[] = $row;
+            $result[] = $this->rowCreate($item,$urlCreate);
         }
 
         $count = count($pagerData["list"]);
 
         if(abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 1){
             // 差が1以上であれば
-            $row = [
-                "url" => $urlCreate($pagerData["max"]),
-                "id" => $pagerData["max"],
-            ];
-
-            $result[] = $row;
+            $result[] = $this->rowCreate($pagerData["max"],$urlCreate);
         }
 
         return $result;
