@@ -61,5 +61,13 @@ class Core
             $start = $endNew - $this->display + 1;
             $start = $this->startCheck($start);
         }
+
+        $result = [
+            "start" => $start,
+            "end" => $endNew,
+            "list" => range($start,$end),
+        ];
+
+        return $result;
     }
 }
