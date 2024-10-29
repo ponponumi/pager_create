@@ -65,7 +65,7 @@ class Core
         $result = [
             "start" => $start,
             "end" => $endNew,
-            "list" => range($start,$end),
+            "list" => range($start,$endNew),
         ];
 
         return $result;
