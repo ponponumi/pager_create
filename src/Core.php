@@ -55,5 +55,11 @@ class Core
         $start = $this->now - intval(floor($this->display / 2));
         $start = $this->startCheck($start);
         $end = $start + $this->display - 1;
+        $endNew = $this->endCheck($end);
+
+        if($end !== $endNew){
+            $start = $endNew - $this->display + 1;
+            $start = $this->startCheck($start);
+        }
     }
 }
