@@ -49,6 +49,11 @@ class Web
         if($pagerData["list"][0] >= 2){
             // 2以上であれば
             $result[] = $this->rowCreate(1,$urlCreate);
+
+            if($this->ellipsisOn && $pagerData["list"][0] >= 3){
+                // 省略記号を表示し、かつ開始が3以上であれば
+                $result[] = $this->rowCreate($pagerData["ellipsis"]);
+            }
         }
 
         foreach($pagerData["list"] as $item){
