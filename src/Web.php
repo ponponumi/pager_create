@@ -92,6 +92,18 @@ class Web
         });
     }
 
+    public function attributeGet(array $setting,string $key,int $getMode = 3)
+    {
+        // HTML属性を返す
+        $attribute = $this->optionGet($setting,$key,"");
+
+        if(is_string($attribute)){
+            return Create::htmlAttribute($attribute,1,$getMode);
+        }else{
+            return "";
+        }
+    }
+
     public function htmlCreate(array $data,array $setting=[])
     {
         // HTMLを生成する
