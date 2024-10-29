@@ -21,6 +21,11 @@ class Web
         $this->core->ellipsisSet($ellipsis);
     }
 
+    public function ellipsisMode($ellipsisOn)
+    {
+        $this->ellipsisOn = $ellipsisOn;
+    }
+
     private function rowCreate($id, callable $urlCreate)
     {
         return [
