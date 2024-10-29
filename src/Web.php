@@ -12,4 +12,9 @@ class Web
     {
         $this->core = new Core($now,$max,$display);
     }
+
+    public function ellipsisSet(string|null $ellipsis)
+    {
+        $this->core->ellipsisSet($ellipsis);
+    }
 }
