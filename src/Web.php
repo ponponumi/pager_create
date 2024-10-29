@@ -113,4 +113,11 @@ class Web
         $data = $this->dataCreate($urlCreate);
         return $this->htmlCreate($data,$setting);
     }
+
+    public function htmlCreateUrlReplace(string $url,string $idReplace,array $setting=[])
+    {
+        // HTMLをURLの置き換えで生成する
+        $data = $this->dataCreateUrlReplace($url,$idReplace);
+        return $this->htmlCreate($data,$setting);
+    }
 }
