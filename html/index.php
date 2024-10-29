@@ -6,3 +6,9 @@ use Ponponumi\PagerCreate\Core;
 
 $core = new Core(5,6,5);
 var_dump($core->rangeCalc());
+$core = new Core(1,3,5);
+var_dump($core->rangeCalc());
+$core = new Core(8,13,5);
+var_dump($core->rangeCalc());
+$core = new Core(1,8,5);
+var_dump($core->rangeCalc());
