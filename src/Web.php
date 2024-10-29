@@ -26,10 +26,16 @@ class Web
         $this->ellipsisOn = $ellipsisOn;
     }
 
-    private function rowCreate($id, callable $urlCreate)
+    private function rowCreate($id, callable|null $urlCreate = null)
     {
+        $url = null;
+
+        if($urlCreate !== null){
+            $url = $urlCreate($id);
+        }
+
         return [
-            "url" => $urlCreate($id),
+            "url" => $url,
             "id" => $id,
         ];
     }
@@ -53,7 +59,7 @@ class Web
 
         if(abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 1){
             // 差が1以上であれば
-            $result[] = $this->rowCreate($pagerData["max"],$urlCreate);
+            $result[] = $this->rowCreate($pagerData["max"]);
         }
 
         return $result;
