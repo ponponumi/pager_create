@@ -104,6 +104,12 @@ class Web
         }
     }
 
+    public function attributeAllGet(array $setting,string $key)
+    {
+        // HTML属性を全て返す
+        return $this->attributeGet($setting,$key);
+    }
+
     public function htmlCreate(array $data,array $setting=[])
     {
         // HTMLを生成する
