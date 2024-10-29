@@ -64,6 +64,11 @@ class Web
 
         if(abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 1){
             // 差が1以上であれば
+            if($this->ellipsisOn && abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 2){
+                // 省略記号を表示し、かつ差が2以上であれば
+                $result[] = $this->rowCreate($pagerData["ellipsis"]);
+            }
+
             $result[] = $this->rowCreate($pagerData["max"],$urlCreate);
         }
 
