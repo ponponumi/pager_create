@@ -95,6 +95,10 @@ class Web
     public function htmlCreate(array $data,array $setting=[])
     {
         // HTMLを生成する
+
+        // まずはオプションを取得する
+        $ulAttribute = $this->optionGet($setting,"ulAttribute","");
+
         $html = '<ul>';
 
         foreach($data as $dataItem){
