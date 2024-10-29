@@ -2,7 +2,8 @@
 
 namespace Ponponumi\PagerCreate;
 
-class Core{
+class Core
+{
     public int $max;
     public int $now;
     public int $display;
