@@ -82,4 +82,28 @@ class Web
             return str_replace($idReplace,strval($id),$url);
         });
     }
+
+    public function htmlCreate(array $data,array $setting=[])
+    {
+        // HTMLを生成する
+        $html = '<ul>';
+
+        foreach($data as $dataItem){
+            $item = '<li>';
+            $text = $dataItem["id"];
+
+            if($dataItem["url"] !== null && $dataItem["url"] !== ""){
+                $text = '<a href="' . $dataItem["url"] . '">' . $text . '</a>';
+            }
+
+            $item .= $text;
+            $item .= '</li>';
+
+            $html .= $item;
+        }
+
+        $html .= '</ul>';
+
+        return $html;
+    }
 }
