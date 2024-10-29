@@ -27,6 +27,17 @@ class Core
         $this->ellipsis = htmlspecialchars($ellipsis);
     }
 
+    private function startCheck(int $input)
+    {
+        // スタートの数値を確認する
+        // 1以上であればその数値、1未満であれば1を返す
+        if($input < 1){
+            $input = 1;
+        }
+
+        return $input;
+    }
+
     public function rangeCalc()
     {
         // 範囲を計算する
