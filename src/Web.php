@@ -9,6 +9,7 @@ class Web
     public $core;
     public string|null $prev = "";
     public string|null $next = "";
+    public $ellipsisOn = true;
 
     public function __construct(int $now, int $max = 1, int $display = 5)
     {
