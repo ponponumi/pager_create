@@ -25,4 +25,11 @@ class Core
         // 省略記号の設定をする
         $this->ellipsis = htmlspecialchars($ellipsis);
     }
+
+    public function rangeCalc()
+    {
+        // 範囲を計算する
+        $start = $this->now - intval(floor($this->display / 2));
+        $end = $start + $this->display - 1;
+    }
 }
