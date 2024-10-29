@@ -38,6 +38,17 @@ class Core
         return $input;
     }
 
+    private function endCheck(int $input)
+    {
+        // エンドの数値を確認する
+        // maxを超えていなければその数値、超えていればmaxを返す
+        if($input > $this->max){
+            $input = $this->max;
+        }
+
+        return $input;
+    }
+
     public function rangeCalc()
     {
         // 範囲を計算する
