@@ -20,4 +20,9 @@ class Core
         $this->max = $max;
         $this->display = $display;
     }
+
+    public function ellipsisSet(string|null $ellipsis){
+        // 省略記号の設定をする
+        $this->ellipsis = $ellipsis;
+    }
 }
