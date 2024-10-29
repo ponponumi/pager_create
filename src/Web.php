@@ -127,7 +127,8 @@ class Web
         $html = '<ul' . $ulAttribute . '>';
 
         foreach($data as $dataItem){
-            $item = '<li>';
+            $itemAttribute = $liAttribute;
+            $item = '<li' . $itemAttribute . '>';
             $text = $dataItem["id"];
 
             if($dataItem["url"] !== null && $dataItem["url"] !== ""){
