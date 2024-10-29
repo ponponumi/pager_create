@@ -123,7 +123,7 @@ class Web
         // まずはオプションを取得する
         $ulAttribute = $this->attributeAllGet($setting,"ulAttribute");
 
-        $html = '<ul>';
+        $html = '<ul' . $ulAttribute . '>';
 
         foreach($data as $dataItem){
             $item = '<li>';
