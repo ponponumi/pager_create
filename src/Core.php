@@ -88,6 +88,7 @@ class Core
             "list" => $list,
             "startSkip" => false,
             "endSkip" => false,
+            "ellipsis" => $this->ellipsis,
         ];
 
         $count = count($list);
