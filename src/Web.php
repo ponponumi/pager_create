@@ -79,7 +79,7 @@ class Web
     {
         // URLを置き換えて、データを取得する
         return $this->dataCreate(function ($id) use ($url, $idReplace){
-            str_replace($idReplace,strval($id),$url);
+            return str_replace($idReplace,strval($id),$url);
         });
     }
 }
