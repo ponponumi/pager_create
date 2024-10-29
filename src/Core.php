@@ -21,7 +21,8 @@ class Core
         $this->display = $display;
     }
 
-    public function ellipsisSet(string|null $ellipsis){
+    public function ellipsisSet(string|null $ellipsis)
+    {
         // 省略記号の設定をする
         $this->ellipsis = htmlspecialchars($ellipsis);
     }
