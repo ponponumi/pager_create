@@ -59,7 +59,7 @@ class Web
 
         if(abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 1){
             // 差が1以上であれば
-            $result[] = $this->rowCreate($pagerData["max"]);
+            $result[] = $this->rowCreate($pagerData["max"],$urlCreate);
         }
 
         return $result;
