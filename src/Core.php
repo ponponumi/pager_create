@@ -76,4 +76,30 @@ class Core
         $range = $this->rangeCalc();
         return range($range["start"],$range["end"]);
     }
+
+    public function pagerDataGet()
+    {
+        // ページャーのデータを取得する
+        $list = $this->rangeListGet();
+
+        $result = [
+            "max" => $this->max,
+            "now" => $this->now,
+            "list" => $list,
+            "startSkip" => false,
+            "endSkip" => false,
+        ];
+
+        $count = count($list);
+
+        if($list[0] >= 3){
+            $result["startSkip"] = true;
+        }
+
+        if(abs($this->max - $list[$count - 1]) >= 2){
+            $result["endSkip"] = true;
+        }
+
+        return $result;
+    }
 }
