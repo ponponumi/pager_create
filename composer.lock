@@ -1,0 +1,55 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "91fe7f267802fcc24c1b671cc23797ee",
+    "packages": [
+        {
+            "name": "ponponumi/html-attribute-create",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ponponumi/html-attribute-create.git",
+                "reference": "6f317f6cac25e1d9950341f878496bf6d5044ec5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ponponumi/html-attribute-create/zipball/6f317f6cac25e1d9950341f878496bf6d5044ec5",
+                "reference": "6f317f6cac25e1d9950341f878496bf6d5044ec5",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ponponumi\\HtmlAttributeCreate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ponponumi",
+                    "email": "ponponumi@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/ponponumi/html-attribute-create/issues",
+                "source": "https://github.com/ponponumi/html-attribute-create/tree/1.0.0"
+            },
+            "time": "2024-10-29T08:54:40+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}

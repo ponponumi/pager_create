@@ -1,0 +1,19 @@
+{
+    "name": "ponponumi/pager-create",
+    "type": "library",
+    "require": {
+        "ponponumi/html-attribute-create": "^1.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ponponumi\\PagerCreate\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ponponumi",
+            "email": "ponponumi@gmail.com"
+        }
+    ]
+}
