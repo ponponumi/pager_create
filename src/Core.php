@@ -69,4 +69,11 @@ class Core
 
         return $result;
     }
+
+    public function rangeListGet()
+    {
+        // リストを返す
+        $range = $this->rangeCalc();
+        return range($range["start"],$range["end"]);
+    }
 }
