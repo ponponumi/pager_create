@@ -16,6 +16,15 @@ class Web
         $this->core = new Core($now,$max,$display);
     }
 
+    public function optionGet(array $array,string $key,$default = null)
+    {
+        if(array_key_exists($key,$array)){
+            return $array[$key];
+        }else{
+            return $default;
+        }
+    }
+
     public function ellipsisSet(string|null $ellipsis)
     {
         $this->core->ellipsisSet($ellipsis);
