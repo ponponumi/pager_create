@@ -23,6 +23,6 @@ class Core
 
     public function ellipsisSet(string|null $ellipsis){
         // 省略記号の設定をする
-        $this->ellipsis = $ellipsis;
+        $this->ellipsis = htmlspecialchars($ellipsis);
     }
 }
