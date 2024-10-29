@@ -20,6 +20,14 @@ class Web
         $this->core->ellipsisSet($ellipsis);
     }
 
+    private function rowCreate($id, callable $urlCreate)
+    {
+        return [
+            "url" => $urlCreate($id),
+            "id" => $id,
+        ];
+    }
+
     public function dataCreate(callable $urlCreate)
     {
         // ページャーのデータを作成
