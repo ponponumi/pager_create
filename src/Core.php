@@ -42,6 +42,7 @@ class Core
     {
         // 範囲を計算する
         $start = $this->now - intval(floor($this->display / 2));
+        $start = $this->startCheck($start);
         $end = $start + $this->display - 1;
     }
 }
