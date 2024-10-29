@@ -121,7 +121,7 @@ class Web
         // HTMLを生成する
 
         // まずはオプションを取得する
-        $ulAttribute = $this->optionGet($setting,"ulAttribute","");
+        $ulAttribute = $this->attributeAllGet($setting,"ulAttribute");
 
         $html = '<ul>';
 
