@@ -134,6 +134,7 @@ class Web
         $nowAttribute = $this->attributeAllGet($setting,"nowAttribute");
 
         $html = '<ul' . $ulAttribute . '>';
+        $pagerHtml = "";
 
         foreach($data as $dataItem){
             $itemAttribute = $liAttribute;
@@ -159,9 +160,10 @@ class Web
             $item .= $text;
             $item .= '</li>';
 
-            $html .= $item;
+            $pagerHtml .= $item;
         }
 
+        $html .= $pagerHtml;
         $html .= '</ul>';
 
         return $html;
