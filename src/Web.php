@@ -148,7 +148,7 @@ class Web
 
             if($index !== $count - 1){
                 $id = $urlCreate($now["id"] + 1);
-                $result["prev"] = '<ul><a href="' . $id . '">' . $this->next . '</a>';
+                $result["next"] = '<ul><a href="' . $id . '">' . $this->next . '</a>';
             }
         }
 
