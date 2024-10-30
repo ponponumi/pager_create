@@ -11,9 +11,11 @@ class Web
     public string|null $next = "";
     public $ellipsisOn = true;
 
-    public function __construct(int $now, int $max = 1, int $display = 5)
+    public function __construct(int $now, int $max = 1, int $display = 5, $prev = "<<", $next = ">>")
     {
         $this->core = new Core($now,$max,$display);
+        $this->prev = $prev;
+        $this->next = $next;
     }
 
     public function optionGet(array $array,string $key,$default = null)
