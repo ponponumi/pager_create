@@ -7,12 +7,12 @@ use Ponponumi\HtmlAttributeCreate\Create;
 class Web
 {
     public $core;
-    public string|null $prev = "";
-    public string|null $next = "";
+    public string $prev = "";
+    public string $next = "";
     public $ellipsisOn = true;
     private $urlCreate = null;
 
-    public function __construct(int $now, int $max = 1, int $display = 5, $prev = "<<", $next = ">>")
+    public function __construct(int $now, int $max = 1, int $display = 5, string $prev = "<<", string $next = ">>")
     {
         $this->core = new Core($now,$max,$display);
         $this->prev = $prev;
