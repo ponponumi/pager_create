@@ -134,6 +134,7 @@ class Web
         $liAttribute = $this->attributeClassesGet($setting,"liAttribute");
         $ellipsisAttribute = $this->attributeClassesGet($setting,"ellipsisAttribute");
         $nowAttribute = $this->attributeAllGet($setting,"nowAttribute");
+        $aroundButtonMode = $this->optionGet($setting,"aroundButtonMode",false);
 
         $html = '<ul' . $ulAttribute . '>';
         $pagerHtml = "";
@@ -165,6 +166,10 @@ class Web
             $item .= '</li>';
 
             $pagerHtml .= $item;
+        }
+
+        if($aroundButtonMode){
+            // 前へと次へのボタンを表示するなら
         }
 
         $html .= $pagerHtml;
