@@ -145,6 +145,7 @@ class Web
                     break;
                 case "now":
                     // 現在値なら
+                    $itemAttribute = $nowAttribute;
                     break;
             }
 
