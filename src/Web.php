@@ -67,7 +67,13 @@ class Web
         }
 
         foreach($pagerData["list"] as $item){
-            $result[] = $this->rowCreate($item,$urlCreate);
+            $itemType = "";
+
+            if($pagerData["now"] === $item){
+                $itemType = "now";
+            }
+
+            $result[] = $this->rowCreate($item,$urlCreate,$itemType);
         }
 
         $count = count($pagerData["list"]);
