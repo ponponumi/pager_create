@@ -11,4 +11,6 @@ echo $web->htmlCreateUrlReplace("./index.php?id={pageid}","{pageid}",[
     "nowAttribute" => "#now.item.now",
     "ellipsisAttribute" => "#ellipsis.item.ellipsis",
     "aroundButtonMode" => true,
+    "prevAttribute" => "#prev-btn",
+    "nextAttribute" => "#next-btn",
 ]);
