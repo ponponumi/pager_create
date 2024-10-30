@@ -10,7 +10,7 @@ class Web
     public string|null $prev = "";
     public string|null $next = "";
     public $ellipsisOn = true;
-    public callable|null $urlCreate = null;
+    private $urlCreate = null;
 
     public function __construct(int $now, int $max = 1, int $display = 5, $prev = "<<", $next = ">>")
     {
