@@ -180,4 +180,10 @@ class Web
         $data = $this->dataCreateUrlReplace($url,$idReplace);
         return $this->htmlCreate($data,$setting);
     }
+
+    public function htmlEchoCallback(callable $urlCreate, array $setting = [])
+    {
+        // HTMLをコールバックで生成し、出力する
+        echo $this->htmlCreateCallback($urlCreate, $setting);
+    }
 }
