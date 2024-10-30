@@ -141,6 +141,7 @@ class Web
             switch($dataItem["type"]){
                 case "ellipsis":
                     // 省略記号なら
+                    $itemAttribute = $ellipsisAttribute;
                     break;
                 case "now":
                     // 現在値なら
