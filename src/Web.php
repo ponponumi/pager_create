@@ -202,7 +202,7 @@ class Web
 
         if($aroundButtonMode){
             // 前へと次へのボタンを表示するなら
-            $aroundData = $this->aroundCreate($data, $nowPage);
+            $aroundData = $this->aroundCreate($data, $nowPage, $prevAttribute, $nextAttribute);
             $pagerHtml = $aroundData["prev"] . $pagerHtml . $aroundData["next"];
         }
 
