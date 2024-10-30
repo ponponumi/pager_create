@@ -125,6 +125,12 @@ class Web
         return $this->attributeGet($setting,$key,2);
     }
 
+    private function aroundCreate(array $data,array $now)
+    {
+        $count = count($data);
+        $index = array_search($now, $data);
+    }
+
     public function htmlCreate(array $data,array $setting=[])
     {
         // HTMLを生成する
