@@ -10,6 +10,7 @@ class Web
     public string|null $prev = "";
     public string|null $next = "";
     public $ellipsisOn = true;
+    public callable|null $urlCreate = null;
 
     public function __construct(int $now, int $max = 1, int $display = 5, $prev = "<<", $next = ">>")
     {
@@ -57,6 +58,8 @@ class Web
         // ページャーのデータを作成
         $pagerData = $this->core->pagerDataGet();
         $result = [];
+
+        $this->urlCreate = $urlCreate;
 
         if($pagerData["list"][0] >= 2){
             // 2以上であれば
