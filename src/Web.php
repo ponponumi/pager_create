@@ -35,7 +35,7 @@ class Web
         $this->ellipsisOn = $ellipsisOn;
     }
 
-    private function rowCreate($id, callable|null $urlCreate = null)
+    private function rowCreate($id, callable|null $urlCreate = null, $type = "")
     {
         $url = null;
 
@@ -46,6 +46,7 @@ class Web
         return [
             "url" => $url,
             "id" => $id,
+            "type" => $type,
         ];
     }
 
