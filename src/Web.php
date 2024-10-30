@@ -167,6 +167,7 @@ class Web
         $prevAttribute = $this->attributeAllGet($setting,"prevAttribute");
         $nextAttribute = $this->attributeAllGet($setting,"nextAttribute");
         $aroundButtonMode = $this->optionGet($setting,"aroundButtonMode",false);
+        $nowNotLink = $this->optionGet($setting,"nowNotLink",true);
 
         $html = '<ul' . $ulAttribute . '>';
         $pagerHtml = "";
