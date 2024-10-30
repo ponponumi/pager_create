@@ -185,6 +185,12 @@ class Web
                     // 現在値なら
                     $itemAttribute = $nowAttribute;
                     $nowPage = $dataItem;
+
+                    if($nowNotLink){
+                        // 現在値をリンク化しない場合
+                        $dataItem["url"] = null;
+                    }
+
                     break;
             }
 
