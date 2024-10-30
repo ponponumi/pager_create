@@ -131,7 +131,7 @@ class Web
         $ulAttribute = $this->attributeAllGet($setting,"ulAttribute");
         $liAttribute = $this->attributeClassesGet($setting,"liAttribute");
         $ellipsisAttribute = $this->attributeClassesGet($setting,"ellipsisAttribute");
-        $nowAttribute = $this->attributeClassesGet($setting,"nowAttribute");
+        $nowAttribute = $this->attributeAllGet($setting,"nowAttribute");
 
         $html = '<ul' . $ulAttribute . '>';
 
