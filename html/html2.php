@@ -10,4 +10,5 @@ echo $web->htmlCreateUrlReplace("./index.php?id={pageid}","{pageid}",[
     "liAttribute" => "#item.item",
     "nowAttribute" => "#now.item.now",
     "ellipsisAttribute" => "#ellipsis.item.ellipsis",
+    "aroundButtonMode" => true,
 ]);
