@@ -186,4 +186,10 @@ class Web
         // HTMLをコールバックで生成し、出力する
         echo $this->htmlCreateCallback($urlCreate, $setting);
     }
+
+    public function htmlEchoUrlReplace(string $url,string $idReplace,array $setting=[])
+    {
+        // HTMLをURLの置き換えで生成し、出力する
+        echo $this->htmlCreateUrlReplace($url, $idReplace, $setting);
+    }
 }
