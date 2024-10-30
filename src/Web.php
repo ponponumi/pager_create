@@ -7,12 +7,12 @@ use Ponponumi\HtmlAttributeCreate\Create;
 class Web
 {
     public $core;
-    public string|null $prev = "";
-    public string|null $next = "";
+    public string $prev = "";
+    public string $next = "";
     public $ellipsisOn = true;
     private $urlCreate = null;
 
-    public function __construct(int $now, int $max = 1, int $display = 5, $prev = "<<", $next = ">>")
+    public function __construct(int $now, int $max = 1, int $display = 5, string $prev = "<<", string $next = ">>")
     {
         $this->core = new Core($now,$max,$display);
         $this->prev = $prev;
@@ -143,12 +143,12 @@ class Web
         if($urlCreate !== null){
             if($index !== 0){
                 $id = $urlCreate($now["id"] - 1);
-                $result["prev"] = '<ul' . $prevAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->prev) . '</a>';
+                $result["prev"] = '<li' . $prevAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->prev) . '</a></li>';
             }
 
             if($index !== $count - 1){
                 $id = $urlCreate($now["id"] + 1);
-                $result["next"] = '<ul' . $nextAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->next) . '</a>';
+                $result["next"] = '<li' . $nextAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->next) . '</a></li>';
             }
         }
 
