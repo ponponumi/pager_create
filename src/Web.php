@@ -164,6 +164,8 @@ class Web
         $liAttribute = $this->attributeClassesGet($setting,"liAttribute");
         $ellipsisAttribute = $this->attributeClassesGet($setting,"ellipsisAttribute");
         $nowAttribute = $this->attributeAllGet($setting,"nowAttribute");
+        $prevAttribute = $this->attributeAllGet($setting,"prevAttribute");
+        $nextAttribute = $this->attributeAllGet($setting,"nextAttribute");
         $aroundButtonMode = $this->optionGet($setting,"aroundButtonMode",false);
 
         $html = '<ul' . $ulAttribute . '>';
