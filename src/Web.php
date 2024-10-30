@@ -130,6 +130,7 @@ class Web
         // まずはオプションを取得する
         $ulAttribute = $this->attributeAllGet($setting,"ulAttribute");
         $liAttribute = $this->attributeClassesGet($setting,"liAttribute");
+        $ellipsisAttribute = $this->attributeClassesGet($setting,"ellipsisAttribute");
 
         $html = '<ul' . $ulAttribute . '>';
 
