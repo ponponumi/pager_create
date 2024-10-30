@@ -109,7 +109,7 @@ class Web
         // HTML属性を返す
         $attribute = $this->optionGet($setting,$key,"");
 
-        if(is_string($attribute)){
+        if(is_string($attribute) && $attribute !== ""){
             return Create::htmlAttribute($attribute,1,$getMode);
         }else{
             return "";
