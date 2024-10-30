@@ -143,12 +143,12 @@ class Web
         if($urlCreate !== null){
             if($index !== 0){
                 $id = $urlCreate($now["id"] - 1);
-                $result["prev"] = '<ul><a href="' . $id . '">' . $this->prev . '</a>';
+                $result["prev"] = '<ul><a href="' . $id . '">' . htmlspecialchars($this->prev) . '</a>';
             }
 
             if($index !== $count - 1){
                 $id = $urlCreate($now["id"] + 1);
-                $result["next"] = '<ul><a href="' . $id . '">' . $this->next . '</a>';
+                $result["next"] = '<ul><a href="' . $id . '">' . htmlspecialchars($this->next) . '</a>';
             }
         }
 
