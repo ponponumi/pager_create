@@ -135,6 +135,16 @@ class Web
 
         foreach($data as $dataItem){
             $itemAttribute = $liAttribute;
+
+            switch($dataItem["type"]){
+                case "ellipsis":
+                    // 省略記号なら
+                    break;
+                case "now":
+                    // 現在値なら
+                    break;
+            }
+
             $item = '<li' . $itemAttribute . '>';
             $text = $dataItem["id"];
 
