@@ -132,6 +132,27 @@ class Web
     {
         $count = count($data);
         $index = array_search($now, $data);
+
+        $urlCreate = $this->urlCreate;
+
+        $result = [
+            "prev" => "",
+            "next" => "",
+        ];
+
+        if($urlCreate !== null){
+            if($index !== 0){
+                $id = $urlCreate($now["id"] - 1);
+                $result["prev"] = '<ul><a href="' . $id . '">' . $this->prev . '</a>';
+            }
+
+            if($index !== $count - 1){
+                $id = $urlCreate($now["id"] + 1);
+                $result["prev"] = '<ul><a href="' . $id . '">' . $this->next . '</a>';
+            }
+        }
+
+        return $result;
     }
 
     public function htmlCreate(array $data,array $setting=[])
