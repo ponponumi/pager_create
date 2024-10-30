@@ -137,6 +137,7 @@ class Web
 
         $html = '<ul' . $ulAttribute . '>';
         $pagerHtml = "";
+        $nowPage = [];
 
         foreach($data as $dataItem){
             $itemAttribute = $liAttribute;
@@ -149,6 +150,7 @@ class Web
                 case "now":
                     // 現在値なら
                     $itemAttribute = $nowAttribute;
+                    $nowPage = $dataItem;
                     break;
             }
 
