@@ -128,7 +128,7 @@ class Web
         return $this->attributeGet($setting,$key,2);
     }
 
-    private function aroundCreate(array $data,array $now)
+    private function aroundCreate(array $data,array $now,string $prevAttribute,string $nextAttribute)
     {
         $count = count($data);
         $index = array_search($now, $data);
@@ -143,12 +143,12 @@ class Web
         if($urlCreate !== null){
             if($index !== 0){
                 $id = $urlCreate($now["id"] - 1);
-                $result["prev"] = '<ul><a href="' . $id . '">' . htmlspecialchars($this->prev) . '</a>';
+                $result["prev"] = '<ul' . $prevAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->prev) . '</a>';
             }
 
             if($index !== $count - 1){
                 $id = $urlCreate($now["id"] + 1);
-                $result["next"] = '<ul><a href="' . $id . '">' . htmlspecialchars($this->next) . '</a>';
+                $result["next"] = '<ul' . $nextAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->next) . '</a>';
             }
         }
 
