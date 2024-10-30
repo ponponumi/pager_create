@@ -13,4 +13,5 @@ echo $web->htmlCreateUrlReplace("./index.php?id={pageid}","{pageid}",[
     "aroundButtonMode" => true,
     "prevAttribute" => "#prev-btn",
     "nextAttribute" => "#next-btn",
+    "nowNotLink" => true,
 ]);
