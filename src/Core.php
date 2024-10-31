@@ -15,6 +15,10 @@ class Core
             $now = 1;
         }
 
+        if($max < 1){
+            $max = 1;
+        }
+
         if($max < $now){
             $this->now = $max;
         }else{
