@@ -62,7 +62,7 @@ class Web
 
         $this->urlCreate = $urlCreate;
 
-        if($pagerData["list"][0] >= 2){
+        if($pagerData["list"][0] >= 2 && $this->firstAndLastMode){
             // 2以上であれば
             $result[] = $this->rowCreate(1,$urlCreate);
 
@@ -84,7 +84,7 @@ class Web
 
         $count = count($pagerData["list"]);
 
-        if(abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 1){
+        if(abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 1 && $this->firstAndLastMode){
             // 差が1以上であれば
             if($this->ellipsisOn && abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 2){
                 // 省略記号を表示し、かつ差が2以上であれば
