@@ -18,6 +18,15 @@ class Core
     public int $display;
     public string|null $ellipsis = "…";
 
+    /**
+     * ページャーを作成します。
+     *
+     * このクラスでは、主にWeb向けのデータを作成します。
+     *
+     * @param int $now 現在のページ番号を渡して下さい。maxより大きい値を渡すと、maxに上書きされます。
+     * @param int $max 最後のページ番号を渡して下さい。初期状態では1です。
+     * @param int $display 画面に表示するボタン数を渡して下さい。初期状態では5です。
+     */
     public function __construct(int $now, int $max = 1, int $display = 5)
     {
         if($now < 1){
