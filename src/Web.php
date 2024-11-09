@@ -11,6 +11,7 @@ class Web
     public string $next = "";
     public $ellipsisOn = true;
     private $urlCreate = null;
+    public $firstAndLastMode = true;
 
     public function __construct(int $now, int $max = 1, int $display = 5, string $prev = "<<", string $next = ">>")
     {
@@ -61,7 +62,7 @@ class Web
 
         $this->urlCreate = $urlCreate;
 
-        if($pagerData["list"][0] >= 2){
+        if($pagerData["list"][0] >= 2 && $this->firstAndLastMode){
             // 2以上であれば
             $result[] = $this->rowCreate(1,$urlCreate);
 
@@ -83,7 +84,7 @@ class Web
 
         $count = count($pagerData["list"]);
 
-        if(abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 1){
+        if(abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 1 && $this->firstAndLastMode){
             // 差が1以上であれば
             if($this->ellipsisOn && abs($pagerData["max"] - $pagerData["list"][$count - 1]) >= 2){
                 // 省略記号を表示し、かつ差が2以上であれば
@@ -243,5 +244,11 @@ class Web
     {
         // HTMLをURLの置き換えで生成し、出力する
         echo $this->htmlCreateUrlReplace($url, $idReplace, $setting);
+    }
+
+    public function firstAndLastModeChange($newValue)
+    {
+        // 最初と最後のボタンを出力するかどうかを変える
+        $this->firstAndLastMode = $newValue;
     }
 }
