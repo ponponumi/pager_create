@@ -4,6 +4,15 @@ namespace Ponponumi\PagerCreate;
 
 class Core
 {
+    /**
+     * ページャーを作成するクラス
+     *
+     * このクラスでは、ページャーを作成し、
+     * HTMLとして返します。
+     *
+     * @package Ponponumi\PagerCreate
+     */
+
     public int $max;
     public int $now;
     public int $display;
