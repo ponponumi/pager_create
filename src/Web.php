@@ -11,6 +11,7 @@ class Web
     public string $next = "";
     public $ellipsisOn = true;
     private $urlCreate = null;
+    public $firstAndLastMode = true;
 
     public function __construct(int $now, int $max = 1, int $display = 5, string $prev = "<<", string $next = ">>")
     {
