@@ -245,4 +245,10 @@ class Web
         // HTMLをURLの置き換えで生成し、出力する
         echo $this->htmlCreateUrlReplace($url, $idReplace, $setting);
     }
+
+    public function firstAndLastModeChange($newValue)
+    {
+        // 最初と最後のボタンを出力するかどうかを変える
+        $this->firstAndLastMode = $newValue;
+    }
 }
