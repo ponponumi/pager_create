@@ -109,6 +109,13 @@ class Core
         return range($range["start"],$range["end"]);
     }
 
+    /**
+     * ページャーのコアデータを作成します。
+     * 
+     * データは配列で返します。
+     * HTMLをカスタマイズする場合は、こちらのメソッドをご利用ください。
+     * @return array
+     */
     public function pagerDataGet()
     {
         // ページャーのデータを取得する
