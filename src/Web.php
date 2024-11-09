@@ -13,6 +13,17 @@ class Web
     private $urlCreate = null;
     public $firstAndLastMode = true;
 
+    /**
+     * ページャーを作成します。
+     *
+     * このクラスでは、HTMLデータを作成します。
+     *
+     * @param int $now 現在のページ番号を渡して下さい。maxより大きい値を渡すと、maxに上書きされます。
+     * @param int $max 最後のページ番号を渡して下さい。初期状態では1です。
+     * @param int $display 画面に表示するボタン数を渡して下さい。初期状態では5です。
+     * @param string $prev 前へボタンのテキストを入力して下さい。初期状態では"<<"です。
+     * @param string $next 次へボタンのテキストを入力して下さい。初期状態では">>"です。
+     */
     public function __construct(int $now, int $max = 1, int $display = 5, string $prev = "<<", string $next = ">>")
     {
         $this->core = new Core($now,$max,$display);
