@@ -13,6 +13,17 @@ class Web
     private $urlCreate = null;
     public $firstAndLastMode = true;
 
+    /**
+     * ページャーを作成します。
+     *
+     * このクラスでは、HTMLデータを作成します。
+     *
+     * @param int $now 現在のページ番号を渡して下さい。maxより大きい値を渡すと、maxに上書きされます。
+     * @param int $max 最後のページ番号を渡して下さい。初期状態では1です。
+     * @param int $display 画面に表示するボタン数を渡して下さい。初期状態では5です。
+     * @param string $prev 前へボタンのテキストを入力して下さい。初期状態では"<<"です。
+     * @param string $next 次へボタンのテキストを入力して下さい。初期状態では">>"です。
+     */
     public function __construct(int $now, int $max = 1, int $display = 5, string $prev = "<<", string $next = ">>")
     {
         $this->core = new Core($now,$max,$display);
@@ -29,11 +40,23 @@ class Web
         }
     }
 
+    /**
+     * 省略記号の設定をします。
+     *
+     * @param string|null $ellipsis 省略記号を渡して下さい。
+     * @return void
+     */
     public function ellipsisSet(string|null $ellipsis)
     {
         $this->core->ellipsisSet($ellipsis);
     }
 
+    /**
+     * 省略記号の表示モードを設定します。
+     *
+     * @param $ellipsisOn 省略記号を表示する場合はtrue、表示しない場合はfalseを渡して下さい。
+     * @return void
+     */
     public function ellipsisMode($ellipsisOn)
     {
         $this->ellipsisOn = $ellipsisOn;
@@ -54,6 +77,12 @@ class Web
         ];
     }
 
+    /**
+     * ページャーのデータを作成します。
+     *
+     * @param callable $urlCreate ここには、ページ番号を含んだURLを作成するためのコールバック関数を渡して下さい。
+     * @return array
+     */
     public function dataCreate(callable $urlCreate)
     {
         // ページャーのデータを作成
@@ -97,6 +126,13 @@ class Web
         return $result;
     }
 
+    /**
+     * URLを置き換えてデータを作成します。
+     *
+     * @param string $url ここには、URLの形式(例: "http://localhost/archive/{id}" )を渡して下さい。
+     * @param string $idReplace ここには、上記のURLからページIDに置き換えたい部分(例: "{id}" )を渡して下さい。
+     * @return array
+     */
     public function dataCreateUrlReplace(string $url,string $idReplace)
     {
         // URLを置き換えて、データを取得する
@@ -156,6 +192,13 @@ class Web
         return $result;
     }
 
+    /**
+     * HTMLを生成します
+     *
+     * @param array $data ページャーのデータを渡して下さい。
+     * @param array $setting 設定データを渡して下さい。
+     * @return string
+     */
     public function htmlCreate(array $data,array $setting=[])
     {
         // HTMLを生成する
@@ -220,6 +263,13 @@ class Web
         return $html;
     }
 
+    /**
+     * HTMLをコールバックで生成します
+     *
+     * @param callable $urlCreate ここには、ページ番号を含んだURLを作成するためのコールバック関数を渡して下さい。
+     * @param array $setting 設定データを渡して下さい。
+     * @return string
+     */
     public function htmlCreateCallback(callable $urlCreate,array $setting=[])
     {
         // HTMLをコールバックで生成する
@@ -227,6 +277,14 @@ class Web
         return $this->htmlCreate($data,$setting);
     }
 
+    /**
+     * URLを置き換えてHTMLを作成します。
+     *
+     * @param string $url ここには、URLの形式(例: "http://localhost/archive/{id}" )を渡して下さい。
+     * @param string $idReplace ここには、上記のURLからページIDに置き換えたい部分(例: "{id}" )を渡して下さい。
+     * @param array $setting 設定データを渡して下さい。
+     * @return string
+     */
     public function htmlCreateUrlReplace(string $url,string $idReplace,array $setting=[])
     {
         // HTMLをURLの置き換えで生成する
@@ -234,18 +292,41 @@ class Web
         return $this->htmlCreate($data,$setting);
     }
 
+    /**
+     * HTMLをコールバックで生成し、出力します
+     * 基本は、htmlCreateCallbackメソッドと同じですが、このメソッドはHTMLを返さず、echoします。
+     *
+     * @param callable $urlCreate ここには、ページ番号を含んだURLを作成するためのコールバック関数を渡して下さい。
+     * @param array $setting 設定データを渡して下さい。
+     * @return void
+     */
     public function htmlEchoCallback(callable $urlCreate, array $setting = [])
     {
         // HTMLをコールバックで生成し、出力する
         echo $this->htmlCreateCallback($urlCreate, $setting);
     }
 
+    /**
+     * URLを置き換えてHTMLを生成し、出力します
+     * 基本は、htmlCreateUrlReplaceメソッドと同じですが、このメソッドはHTMLを返さず、echoします。
+     *
+     * @param string $url ここには、URLの形式(例: "http://localhost/archive/{id}" )を渡して下さい。
+     * @param string $idReplace ここには、上記のURLからページIDに置き換えたい部分(例: "{id}" )を渡して下さい。
+     * @param array $setting 設定データを渡して下さい
+     * @return void
+     */
     public function htmlEchoUrlReplace(string $url,string $idReplace,array $setting=[])
     {
         // HTMLをURLの置き換えで生成し、出力する
         echo $this->htmlCreateUrlReplace($url, $idReplace, $setting);
     }
 
+    /**
+     * 最初と最後のボタンを出力するかどうか選びます。
+     *
+     * @param $newValue 出力する場合はtrue、出力しない場合はfalseを渡して下さい。
+     * @return void
+     */
     public function firstAndLastModeChange($newValue)
     {
         // 最初と最後のボタンを出力するかどうかを変える

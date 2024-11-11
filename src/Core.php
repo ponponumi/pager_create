@@ -4,11 +4,29 @@ namespace Ponponumi\PagerCreate;
 
 class Core
 {
+    /**
+     * ページャーを作成するクラス
+     *
+     * このクラスでは、ページャーを作成し、
+     * コアデータとして返します。
+     *
+     * @package Ponponumi\PagerCreate
+     */
+
     public int $max;
     public int $now;
     public int $display;
     public string|null $ellipsis = "…";
 
+    /**
+     * ページャーを作成します。
+     *
+     * このクラスでは、コアデータを作成します。
+     *
+     * @param int $now 現在のページ番号を渡して下さい。maxより大きい値を渡すと、maxに上書きされます。
+     * @param int $max 最後のページ番号を渡して下さい。初期状態では1です。
+     * @param int $display 画面に表示するボタン数を渡して下さい。初期状態では5です。
+     */
     public function __construct(int $now, int $max = 1, int $display = 5)
     {
         if($now < 1){
@@ -29,6 +47,12 @@ class Core
         $this->display = $display;
     }
 
+    /**
+     * 省略記号の設定をします。
+     *
+     * @param string|null $ellipsis ここに、省略記号を渡して下さい。
+     * @return void
+     */
     public function ellipsisSet(string|null $ellipsis)
     {
         // 省略記号の設定をする
@@ -85,6 +109,13 @@ class Core
         return range($range["start"],$range["end"]);
     }
 
+    /**
+     * ページャーのコアデータを作成します。
+     * 
+     * データは配列で返します。
+     * HTMLをカスタマイズする場合は、こちらのメソッドをご利用ください。
+     * @return array
+     */
     public function pagerDataGet()
     {
         // ページャーのデータを取得する
