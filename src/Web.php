@@ -306,6 +306,15 @@ class Web
         echo $this->htmlCreateCallback($urlCreate, $setting);
     }
 
+    /**
+     * URLを置き換えてHTMLを生成し、出力します
+     * 基本は、htmlCreateUrlReplaceメソッドと同じですが、このメソッドはHTMLを返さず、echoします。
+     *
+     * @param string $url ここには、URLの形式(例: "http://localhost/archive/{id}" )を渡して下さい。
+     * @param string $idReplace ここには、上記のURLからページIDに置き換えたい部分(例: "{id}" )を渡して下さい。
+     * @param array $setting 設定データを渡して下さい
+     * @return void
+     */
     public function htmlEchoUrlReplace(string $url,string $idReplace,array $setting=[])
     {
         // HTMLをURLの置き換えで生成し、出力する
