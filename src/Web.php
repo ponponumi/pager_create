@@ -77,6 +77,12 @@ class Web
         ];
     }
 
+    /**
+     * ページャーのデータを作成します。
+     *
+     * @param callable $urlCreate ここには、ページ番号を含んだURLを作成するためのコールバック関数を渡して下さい。
+     * @return void
+     */
     public function dataCreate(callable $urlCreate)
     {
         // ページャーのデータを作成
