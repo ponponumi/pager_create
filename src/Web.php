@@ -277,6 +277,14 @@ class Web
         return $this->htmlCreate($data,$setting);
     }
 
+    /**
+     * URLを置き換えてHTMLを作成します。
+     * 
+     * @param string $url ここには、URLの形式(例: "http://localhost/archive/{id}" )を渡して下さい。
+     * @param string $idReplace ここには、上記のURLからページIDに置き換えたい部分(例: "{id}" )を渡して下さい。
+     * @param array $setting 設定データを渡して下さい。
+     * @return string
+     */
     public function htmlCreateUrlReplace(string $url,string $idReplace,array $setting=[])
     {
         // HTMLをURLの置き換えで生成する
