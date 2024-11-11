@@ -333,4 +333,10 @@ class Web
         // 最初と最後のボタンを出力するかどうかを変える
         $this->firstAndLastMode = $newValue;
     }
+
+    public function idAndClassDirectly($newValue)
+    {
+        // ID名とクラス名を直接書くかどうか選べるように変更
+        $this->idAndClassDirectlyWrite = $newValue;
+    }
 }
