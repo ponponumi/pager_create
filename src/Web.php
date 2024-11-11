@@ -192,6 +192,13 @@ class Web
         return $result;
     }
 
+    /**
+     * HTMLを生成します
+     *
+     * @param array $data ページャーのデータを渡して下さい。
+     * @param array $setting 設定データを渡して下さい。
+     * @return string
+     */
     public function htmlCreate(array $data,array $setting=[])
     {
         // HTMLを生成する
