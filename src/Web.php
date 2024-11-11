@@ -12,6 +12,7 @@ class Web
     public $ellipsisOn = true;
     private $urlCreate = null;
     public $firstAndLastMode = true;
+    public $idAndClassDirectlyWrite = false;
 
     /**
      * ページャーを作成します。
@@ -147,7 +148,20 @@ class Web
         $attribute = $this->optionGet($setting,$key,"");
 
         if(is_string($attribute) && $attribute !== ""){
-            return Create::htmlAttribute($attribute,1,$getMode);
+            if($this->idAndClassDirectlyWrite){
+                // HTML属性形式で書くなら
+                $first = substr($attribute, 0, 1);
+
+                if($first !== " "){
+                    // 最初がスペースでなければスペースを追加
+                    $attribute = " " . $attribute;
+                }
+
+                return $attribute;
+            }else{
+                // CSSセレクタ形式で書くなら
+                return Create::htmlAttribute($attribute,1,$getMode);
+            }
         }else{
             return "";
         }
@@ -331,5 +345,17 @@ class Web
     {
         // 最初と最後のボタンを出力するかどうかを変える
         $this->firstAndLastMode = $newValue;
+    }
+
+    /**
+     * ID名とクラス名のHTML属性を、直接書くかどうか選べるように変更します
+     *
+     * @param mixed $newValue ID名とクラス名のHTML属性を直接書きたい場合はtrue、CSSセレクタと同じ形式で書きたい場合はfalseを渡して下さい。
+     * @return void
+     */
+    public function idAndClassDirectly($newValue)
+    {
+        // ID名とクラス名を直接書くかどうか選べるように変更
+        $this->idAndClassDirectlyWrite = $newValue;
     }
 }
