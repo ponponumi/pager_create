@@ -148,7 +148,20 @@ class Web
         $attribute = $this->optionGet($setting,$key,"");
 
         if(is_string($attribute) && $attribute !== ""){
-            return Create::htmlAttribute($attribute,1,$getMode);
+            if($this->idAndClassDirectlyWrite){
+                // HTML属性形式で書くなら
+                $first = substr($attribute, 0, 1);
+
+                if($first !== " "){
+                    // 最初がスペースでなければスペースを追加
+                    $attribute = " " . $attribute;
+                }
+
+                return $attribute;
+            }else{
+                // CSSセレクタ形式で書くなら
+                return Create::htmlAttribute($attribute,1,$getMode);
+            }
         }else{
             return "";
         }
