@@ -12,6 +12,7 @@ class Web
     public $ellipsisOn = true;
     private $urlCreate = null;
     public $firstAndLastMode = true;
+    public $idAndClassDirectlyWrite = false;
 
     /**
      * ページャーを作成します。
