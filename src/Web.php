@@ -81,7 +81,7 @@ class Web
      * ページャーのデータを作成します。
      *
      * @param callable $urlCreate ここには、ページ番号を含んだURLを作成するためのコールバック関数を渡して下さい。
-     * @return void
+     * @return array
      */
     public function dataCreate(callable $urlCreate)
     {
@@ -131,7 +131,7 @@ class Web
      *
      * @param string $url ここには、URLの形式(例: "http://localhost/archive/{id}" )を渡して下さい。
      * @param string $idReplace ここには、上記のURLからページIDに置き換えたい部分(例: "{id}" )を渡して下さい。
-     * @return void
+     * @return array
      */
     public function dataCreateUrlReplace(string $url,string $idReplace)
     {
