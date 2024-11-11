@@ -279,7 +279,7 @@ class Web
 
     /**
      * URLを置き換えてHTMLを作成します。
-     * 
+     *
      * @param string $url ここには、URLの形式(例: "http://localhost/archive/{id}" )を渡して下さい。
      * @param string $idReplace ここには、上記のURLからページIDに置き換えたい部分(例: "{id}" )を渡して下さい。
      * @param array $setting 設定データを渡して下さい。
@@ -304,6 +304,12 @@ class Web
         echo $this->htmlCreateUrlReplace($url, $idReplace, $setting);
     }
 
+    /**
+     * 最初と最後のボタンを出力するかどうか選びます。
+     *
+     * @param $newValue 出力する場合はtrue、出力しない場合はfalseを渡して下さい。
+     * @return void
+     */
     public function firstAndLastModeChange($newValue)
     {
         // 最初と最後のボタンを出力するかどうかを変える
