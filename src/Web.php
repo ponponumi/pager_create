@@ -334,6 +334,12 @@ class Web
         $this->firstAndLastMode = $newValue;
     }
 
+    /**
+     * ID名とクラス名のHTML属性を、直接書くかどうか選べるように変更します
+     *
+     * @param mixed $newValue ID名とクラス名のHTML属性を直接書きたい場合はtrue、CSSセレクタと同じ形式で書きたい場合はfalseを渡して下さい。
+     * @return void
+     */
     public function idAndClassDirectly($newValue)
     {
         // ID名とクラス名を直接書くかどうか選べるように変更
