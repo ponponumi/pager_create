@@ -40,6 +40,12 @@ class Web
         }
     }
 
+    /**
+     * 省略記号の設定をします。
+     *
+     * @param string|null $ellipsis 省略記号を渡して下さい。
+     * @return void
+     */
     public function ellipsisSet(string|null $ellipsis)
     {
         $this->core->ellipsisSet($ellipsis);
