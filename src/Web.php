@@ -126,6 +126,13 @@ class Web
         return $result;
     }
 
+    /**
+     * URLを置き換えてデータを作成します。
+     *
+     * @param string $url ここには、URLの形式(例: "http://localhost/archive/{id}" )を渡して下さい。
+     * @param string $idReplace ここには、上記のURLからページIDに置き換えたい部分(例: "{id}" )を渡して下さい。
+     * @return void
+     */
     public function dataCreateUrlReplace(string $url,string $idReplace)
     {
         // URLを置き換えて、データを取得する
