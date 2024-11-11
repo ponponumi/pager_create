@@ -51,6 +51,12 @@ class Web
         $this->core->ellipsisSet($ellipsis);
     }
 
+    /**
+     * 省略記号の表示モードを設定します。
+     *
+     * @param $ellipsisOn 省略記号を表示する場合はtrue、表示しない場合はfalseを渡して下さい。
+     * @return void
+     */
     public function ellipsisMode($ellipsisOn)
     {
         $this->ellipsisOn = $ellipsisOn;
