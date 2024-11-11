@@ -292,6 +292,14 @@ class Web
         return $this->htmlCreate($data,$setting);
     }
 
+    /**
+     * HTMLをコールバックで生成し、出力します
+     * 基本は、htmlCreateCallbackメソッドと同じですが、このメソッドはHTMLを返さず、echoします。
+     *
+     * @param callable $urlCreate ここには、ページ番号を含んだURLを作成するためのコールバック関数を渡して下さい。
+     * @param array $setting 設定データを渡して下さい。
+     * @return void
+     */
     public function htmlEchoCallback(callable $urlCreate, array $setting = [])
     {
         // HTMLをコールバックで生成し、出力する
