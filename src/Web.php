@@ -13,6 +13,8 @@ class Web
     private $urlCreate = null;
     public $firstAndLastMode = true;
     public $idAndClassDirectlyWrite = false;
+    public string $listTag = "ul";
+    public string $itemTag = "li";
 
     /**
      * ページャーを作成します。
