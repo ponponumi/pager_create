@@ -247,7 +247,7 @@ class Web
         $aroundButtonMode = $this->optionGet($setting,"aroundButtonMode",false);
         $nowNotLink = $this->optionGet($setting,"nowNotLink",true);
 
-        $html = '<ul' . $ulAttribute . '>';
+        $html = '<' . $this->listTag . $ulAttribute . '>';
         $pagerHtml = "";
         $nowPage = [];
 
@@ -292,7 +292,7 @@ class Web
         }
 
         $html .= $pagerHtml;
-        $html .= '</ul>';
+        $html .= '</' . $this->listTag . '>';
 
         return $html;
     }
