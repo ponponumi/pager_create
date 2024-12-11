@@ -214,12 +214,12 @@ class Web
         if($urlCreate !== null){
             if($index !== 0){
                 $id = $urlCreate($now["id"] - 1);
-                $result["prev"] = '<li' . $prevAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->prev) . '</a></li>';
+                $result["prev"] = '<' . $this->itemTag . $prevAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->prev) . '</a></' . $this->itemTag . '>';
             }
 
             if($index !== $count - 1){
                 $id = $urlCreate($now["id"] + 1);
-                $result["next"] = '<li' . $nextAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->next) . '</a></li>';
+                $result["next"] = '<' . $this->itemTag . $nextAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->next) . '</a></' . $this->itemTag . '>';
             }
         }
 
@@ -272,7 +272,7 @@ class Web
                     break;
             }
 
-            $item = '<li' . $itemAttribute . '>';
+            $item = '<' . $this->itemTag . $itemAttribute . '>';
             $text = $dataItem["id"];
 
             if($dataItem["url"] !== null && $dataItem["url"] !== ""){
@@ -280,7 +280,7 @@ class Web
             }
 
             $item .= $text;
-            $item .= '</li>';
+            $item .= '</' . $this->itemTag . '>';
 
             $pagerHtml .= $item;
         }
