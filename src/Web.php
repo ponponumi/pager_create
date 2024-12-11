@@ -13,6 +13,8 @@ class Web
     private $urlCreate = null;
     public $firstAndLastMode = true;
     public $idAndClassDirectlyWrite = false;
+    public string $listTag = "ul";
+    public string $itemTag = "li";
 
     /**
      * ページャーを作成します。
@@ -30,6 +32,24 @@ class Web
         $this->core = new Core($now,$max,$display);
         $this->prev = $prev;
         $this->next = $next;
+    }
+
+    public function tagModeChange(string $tagMode="ul")
+    {
+        switch($tagMode){
+            case "ul":
+                $this->listTag = "ul";
+                $this->itemTag = "li";
+                break;
+            case "ol":
+                $this->listTag = "ol";
+                $this->itemTag = "li";
+                break;
+            case "div":
+                $this->listTag = "div";
+                $this->itemTag = "div";
+                break;
+        }
     }
 
     public function optionGet(array $array,string $key,$default = null)
@@ -194,12 +214,12 @@ class Web
         if($urlCreate !== null){
             if($index !== 0){
                 $id = $urlCreate($now["id"] - 1);
-                $result["prev"] = '<li' . $prevAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->prev) . '</a></li>';
+                $result["prev"] = '<' . $this->itemTag . $prevAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->prev) . '</a></' . $this->itemTag . '>';
             }
 
             if($index !== $count - 1){
                 $id = $urlCreate($now["id"] + 1);
-                $result["next"] = '<li' . $nextAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->next) . '</a></li>';
+                $result["next"] = '<' . $this->itemTag . $nextAttribute . '><a href="' . $id . '">' . htmlspecialchars($this->next) . '</a></' . $this->itemTag . '>';
             }
         }
 
@@ -227,7 +247,7 @@ class Web
         $aroundButtonMode = $this->optionGet($setting,"aroundButtonMode",false);
         $nowNotLink = $this->optionGet($setting,"nowNotLink",true);
 
-        $html = '<ul' . $ulAttribute . '>';
+        $html = '<' . $this->listTag . $ulAttribute . '>';
         $pagerHtml = "";
         $nowPage = [];
 
@@ -252,7 +272,7 @@ class Web
                     break;
             }
 
-            $item = '<li' . $itemAttribute . '>';
+            $item = '<' . $this->itemTag . $itemAttribute . '>';
             $text = $dataItem["id"];
 
             if($dataItem["url"] !== null && $dataItem["url"] !== ""){
@@ -260,7 +280,7 @@ class Web
             }
 
             $item .= $text;
-            $item .= '</li>';
+            $item .= '</' . $this->itemTag . '>';
 
             $pagerHtml .= $item;
         }
@@ -272,7 +292,7 @@ class Web
         }
 
         $html .= $pagerHtml;
-        $html .= '</ul>';
+        $html .= '</' . $this->listTag . '>';
 
         return $html;
     }
