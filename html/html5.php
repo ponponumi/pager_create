@@ -5,7 +5,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 use Ponponumi\PagerCreate\Web;
 
 $web = new web($_GET["id"] ?? 1, 30, 5);
-$web->tagModeChange("div");
+$web->tagModeChange("ol");
 $web->idAndClassDirectly(true);
 echo $web->htmlCreateUrlReplace("./html5.php?id={pageid}","{pageid}",[
     "ulAttribute" => 'id="pager" class="pagerList menu"',
