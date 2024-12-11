@@ -34,6 +34,24 @@ class Web
         $this->next = $next;
     }
 
+    public function tagModeChange(string $tagMode="ul")
+    {
+        switch($tagMode){
+            case "ul":
+                $this->listTag = "ul";
+                $this->itemTag = "li";
+                break;
+            case "ol":
+                $this->listTag = "ol";
+                $this->itemTag = "li";
+                break;
+            case "div":
+                $this->listTag = "div";
+                $this->itemTag = "div";
+                break;
+        }
+    }
+
     public function optionGet(array $array,string $key,$default = null)
     {
         if(array_key_exists($key,$array)){
