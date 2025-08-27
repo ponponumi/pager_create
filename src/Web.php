@@ -378,4 +378,9 @@ class Web
         // ID名とクラス名を直接書くかどうか選べるように変更
         $this->idAndClassDirectlyWrite = $newValue;
     }
+
+    public function pageChange(int $nowPage,int $maxPage): void
+    {
+        $this->core->pageChange($nowPage, $maxPage);
+    }
 }
