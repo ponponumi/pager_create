@@ -111,7 +111,7 @@ class Core
 
     /**
      * ページャーのコアデータを作成します。
-     * 
+     *
      * データは配列で返します。
      * HTMLをカスタマイズする場合は、こちらのメソッドをご利用ください。
      * @return array
@@ -143,15 +143,10 @@ class Core
         return $result;
     }
 
-    public function nowPageChange(int $page): void
+    public function pageChange(int $nowPage,int $maxPage): void
     {
         // 現在のページを変更
-        $this->now = max($page, 1);
-    }
-
-    public function maxPageChange(int $page): void
-    {
-        // 最後のページを変更
-        $this->max = max($page, 1);
+        $this->max = max($maxPage, 1);
+        $this->now = min(max($nowPage, 1), $this->max);
     }
 }
