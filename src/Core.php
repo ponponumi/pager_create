@@ -148,4 +148,10 @@ class Core
         // 現在のページを変更
         $this->now = max($page, 1);
     }
+
+    public function maxPageChange(int $page): void
+    {
+        // 最後のページを変更
+        $this->max = $page;
+    }
 }
