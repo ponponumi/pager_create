@@ -142,4 +142,10 @@ class Core
 
         return $result;
     }
+
+    public function nowPageChange(int $page): void
+    {
+        // 現在のページを変更
+        $this->now = max($page, 1);
+    }
 }
