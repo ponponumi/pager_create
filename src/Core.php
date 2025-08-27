@@ -129,6 +129,13 @@ class Core
         return $result;
     }
 
+    /**
+     * ページ番号を変える
+     *
+     * @param int $nowPage ここには、今のページを渡してください
+     * @param int $maxPage ここには、最後のページを渡してください
+     * @return void
+     */
     public function pageChange(int $nowPage,int $maxPage): void
     {
         // 現在のページを変更
