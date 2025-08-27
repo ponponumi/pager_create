@@ -378,4 +378,27 @@ class Web
         // ID名とクラス名を直接書くかどうか選べるように変更
         $this->idAndClassDirectlyWrite = $newValue;
     }
+
+    /**
+     * ページ番号を変える
+     *
+     * @param int $nowPage ここには、今のページを渡してください
+     * @param int $maxPage ここには、最後のページを渡してください
+     * @return void
+     */
+    public function pageChange(int $nowPage,int $maxPage): void
+    {
+        $this->core->pageChange($nowPage, $maxPage);
+    }
+
+    /**
+     * 表示するページ数を変える
+     *
+     * @param int $display ここには、表示するページ数を渡してください
+     * @return void
+     */
+    public function displayChange($display): void
+    {
+        $this->core->displayChange($display);
+    }
 }

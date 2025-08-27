@@ -29,22 +29,8 @@ class Core
      */
     public function __construct(int $now, int $max = 1, int $display = 5)
     {
-        if($now < 1){
-            $now = 1;
-        }
-
-        if($max < 1){
-            $max = 1;
-        }
-
-        if($max < $now){
-            $this->now = $max;
-        }else{
-            $this->now = $now;
-        }
-
-        $this->max = $max;
-        $this->display = $display;
+        $this->pageChange($now, $max);
+        $this->displayChange($display);
     }
 
     /**
@@ -111,7 +97,7 @@ class Core
 
     /**
      * ページャーのコアデータを作成します。
-     * 
+     *
      * データは配列で返します。
      * HTMLをカスタマイズする場合は、こちらのメソッドをご利用ください。
      * @return array
@@ -141,5 +127,30 @@ class Core
         }
 
         return $result;
+    }
+
+    /**
+     * ページ番号を変える
+     *
+     * @param int $nowPage ここには、今のページを渡してください
+     * @param int $maxPage ここには、最後のページを渡してください
+     * @return void
+     */
+    public function pageChange(int $nowPage,int $maxPage): void
+    {
+        // 現在のページを変更
+        $this->max = max($maxPage, 1);
+        $this->now = min(max($nowPage, 1), $this->max);
+    }
+
+    /**
+     * 表示するページ数を変える
+     *
+     * @param int $display ここには、表示するページ数を渡してください
+     * @return void
+     */
+    public function displayChange(int $display): void
+    {
+        $this->display = $display;
     }
 }
