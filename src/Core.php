@@ -143,6 +143,12 @@ class Core
         $this->now = min(max($nowPage, 1), $this->max);
     }
 
+    /**
+     * 表示するページ数を変える
+     *
+     * @param int $display ここには、表示するページ数を渡してください
+     * @return void
+     */
     public function displayChange(int $display): void
     {
         $this->display = $display;
