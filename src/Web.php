@@ -383,4 +383,9 @@ class Web
     {
         $this->core->pageChange($nowPage, $maxPage);
     }
+
+    public function displayChange($display): void
+    {
+        $this->core->displayChange($display);
+    }
 }
