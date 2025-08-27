@@ -29,21 +29,7 @@ class Core
      */
     public function __construct(int $now, int $max = 1, int $display = 5)
     {
-        if($now < 1){
-            $now = 1;
-        }
-
-        if($max < 1){
-            $max = 1;
-        }
-
-        if($max < $now){
-            $this->now = $max;
-        }else{
-            $this->now = $now;
-        }
-
-        $this->max = $max;
+        $this->pageChange($now, $max);
         $this->display = $display;
     }
 
