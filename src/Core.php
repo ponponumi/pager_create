@@ -30,7 +30,7 @@ class Core
     public function __construct(int $now, int $max = 1, int $display = 5)
     {
         $this->pageChange($now, $max);
-        $this->display = $display;
+        $this->displayChange($display);
     }
 
     /**
