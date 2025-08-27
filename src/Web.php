@@ -391,6 +391,12 @@ class Web
         $this->core->pageChange($nowPage, $maxPage);
     }
 
+    /**
+     * 表示するページ数を変える
+     *
+     * @param int $display ここには、表示するページ数を渡してください
+     * @return void
+     */
     public function displayChange($display): void
     {
         $this->core->displayChange($display);
