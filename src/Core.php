@@ -152,6 +152,6 @@ class Core
     public function maxPageChange(int $page): void
     {
         // 最後のページを変更
-        $this->max = $page;
+        $this->max = max($page, 1);
     }
 }
