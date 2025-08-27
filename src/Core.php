@@ -135,4 +135,9 @@ class Core
         $this->max = max($maxPage, 1);
         $this->now = min(max($nowPage, 1), $this->max);
     }
+
+    public function displayChange(int $display): void
+    {
+        $this->display = $display;
+    }
 }
